@@ -1,0 +1,1 @@
+/Users/magicdawn/projects/bitbar-pm25/index.js

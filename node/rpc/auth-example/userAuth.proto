@@ -1,0 +1,25 @@
+syntax = "proto3";
+package auth;
+
+service AuthService {
+  rpc getAuthResult (AuthRequest) returns (AuthResponse) {}
+}
+
+message AuthRequest {
+  string token = 1;
+}
+
+message AuthResponse {
+  bool success = 1;
+  ErrorBody error = 2;
+  DataBody data = 3;
+}
+
+message ErrorBody {
+  string code = 1;
+  string message = 2;
+}
+
+message DataBody {
+  string uid = 1;
+}

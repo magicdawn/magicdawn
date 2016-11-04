@@ -1,0 +1,44 @@
+CS:
+  - "Linux/Unix 系统编程手册": 62
+  - "TCP/IP 详解卷一: 协议": 82
+  - "HTTP 权威指南": 25
+
+Database:
+  - mysql: 54
+  - redis: 63
+  - mongo: 51
+
+Languages:
+  - ES6: 44
+  - typescript: 87
+  - C: 49
+  - C++: 61
+  - Bash: 40
+  - golang: 86
+  - python: 83
+  - lua: 92
+  - java: not yet
+  - php: not yet
+
+Node:
+  - v8: 68
+  - gyp: 67
+  - libuv: 50
+
+Frameworks:
+  - Express: 24
+  - koa: 19
+  - Sails: 72
+
+Tools:
+  - curl: 73
+  - nginx: 58
+  - Atom: 55
+  - vim: 91
+
+FE:
+  - JS tricks: 33
+  - angular: 70
+  - vue: 34
+  - react: 8
+  - webpack: 7
