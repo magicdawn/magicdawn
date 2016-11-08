@@ -10,7 +10,7 @@ env:
 # rules
 rules:
   # basic
-  semi: [error, never]
+  semi: [error, always]
   quotes: [error, single]
   eqeqeq: error
   camelcase: error
@@ -37,7 +37,5 @@ rules:
 
 parserOptions:
   ecmaVersion: 6
-  ecmaFeatures:
-    impliedStrict: true
 
 extends: 'eslint:recommended'
