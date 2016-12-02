@@ -120,6 +120,9 @@ export IOJS_ORG_MIRROR='http://npm.taobao.org/mirrors/iojs'
 export NVM_NODEJS_ORG_MIRROR="$NODEJS_ORG_MIRROR"
 export NVM_IOJS_ORG_MIRROR="$IOJS_ORG_MIRROR"
 
+## sass proxy
+export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass/"
+
 ## npm version `patch` `minor` `major`
 for x in patch minor major; do
   alias npm-$x="npm version $x && npm publish && gp origin --all && gp origin --tags"
