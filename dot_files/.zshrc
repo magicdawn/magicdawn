@@ -155,8 +155,11 @@ if which pyenv > /dev/null; then
 fi
 
 # JAVA
-export JAVA_HOME="/Library/Java/Home"
+export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 export CLASS_PATH="$JAVA_HOME/lib"
+
+# groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # baiduyun
 # 默认就是
@@ -246,3 +249,25 @@ function http-proxy-socks(){
   export http_proxy=http://127.0.0.1:10086
   export https_proxy=$http_proxy
 }
+
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+
+# 
+# proxychains
+# 
+alias pc='proxychains4'
+alias proxy='proxychains4'
+
+# 
+# rabbitmq
+# 
+export PATH="$PATH:/usr/local/sbin/"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/magicdawn/.sdkman"
+[[ -s "/Users/magicdawn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magicdawn/.sdkman/bin/sdkman-init.sh"
+
+
+# 
+# postgres
+# 
+export PGDATA='/Users/magicdawn/data/pgdata'

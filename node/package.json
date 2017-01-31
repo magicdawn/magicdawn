@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "dependencies": {
+    "amqplib": "^0.5.1",
     "co": "^4.6.0",
     "form-data": "^1.0.1",
     "nodemailer": "^2.6.4",
