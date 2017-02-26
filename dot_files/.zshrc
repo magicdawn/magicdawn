@@ -9,6 +9,12 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 ZSH_THEME="steeef"
 # ZSH_THEME="ys"
 
+#
+# pure
+#
+# autoload -U promptinit; promptinit
+# prompt pure
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -252,22 +258,22 @@ function http-proxy-socks(){
 
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 
-# 
+#
 # proxychains
-# 
+#
 alias pc='proxychains4'
 alias proxy='proxychains4'
 
-# 
+#
 # rabbitmq
-# 
+#
 export PATH="$PATH:/usr/local/sbin/"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/magicdawn/.sdkman"
 [[ -s "/Users/magicdawn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magicdawn/.sdkman/bin/sdkman-init.sh"
 
 
-# 
+#
 # postgres
-# 
+#
 export PGDATA='/Users/magicdawn/data/pgdata'
