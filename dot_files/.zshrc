@@ -139,6 +139,9 @@ npm-i-cnpm(){
   npm install -g cnpm --registry=https://registry.npm.taobao.org
 }
 
+## npm-check
+export NPM_CHECK_INSTALLER=cnpm
+
 ## npm-taobao-regsitry
 alias npm-taobao-registry="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
