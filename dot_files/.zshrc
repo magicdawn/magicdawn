@@ -8,6 +8,7 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="steeef"
 # ZSH_THEME="ys"
+# ZSH_THEME="pure"
 
 #
 # pure
@@ -280,3 +281,4 @@ export SDKMAN_DIR="/Users/magicdawn/.sdkman"
 # postgres
 #
 export PGDATA='/Users/magicdawn/data/pgdata'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
