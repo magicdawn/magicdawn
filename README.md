@@ -1,4 +1,6 @@
 # magicdawn
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/magicdawn/magicdawn.svg)](https://greenkeeper.io/)
 个人学习 / 代码 / 总结 / 读书笔记, 请勿参与评论. see [Issues](../../issues)
 
 ## TOC
