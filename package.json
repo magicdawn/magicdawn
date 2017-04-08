@@ -11,11 +11,11 @@
     "lodash": "^4.13.1",
     "minimist": "^1.2.0",
     "mysql": "^2.11.1",
-    "nunjucks": "^2.4.2",
-    "pg": "^5.1.0",
+    "nunjucks": "^3.0.0",
+    "pg": "^6.1.5",
     "ractive-engine": "^0.1.1",
-    "ramda": "^0.21.0",
-    "react-redux": "^4.4.5",
+    "ramda": "^0.23.0",
+    "react-redux": "^5.0.3",
     "redux": "^3.5.2",
     "sequelize": "^3.23.3"
   }
