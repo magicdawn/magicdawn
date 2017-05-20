@@ -17,8 +17,8 @@ Languages:
   - golang: 86
   - python: 83
   - lua: 92
-  - java: not yet
-  - php: not yet
+  - java: 100
+  - php: 93
 
 Node:
   - v8: 68

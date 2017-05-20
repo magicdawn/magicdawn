@@ -132,7 +132,7 @@ export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass/"
 
 ## npm version `patch` `minor` `major`
 for x in patch minor major; do
-  alias npm-$x="npm version $x && npm publish && gp origin --all && gp origin --tags"
+  alias npm-$x="nrm use npm && npm version $x && npm publish && gp origin --all && gp origin --tags"
 done
 
 ## install cnpm
@@ -159,14 +159,21 @@ eval "$(rbenv init -)"
 # dotnet
 export PATH="$PATH:/usr/local/share/dotnet"
 
+# 
+# python
+# 
+
 # pyenv
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)";
 fi
 
+# alias exec
+alias py='python'
+
 # JAVA
 export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
-export CLASS_PATH="$JAVA_HOME/lib"
+export CLASSPATH=".:$JAVA_HOME/lib"
 
 # groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec

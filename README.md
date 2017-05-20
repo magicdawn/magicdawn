@@ -25,8 +25,8 @@
 - [golang](../../issues/86)
 - [python](../../issues/83)
 - [lua](../../issues/92)
-- [java](../../issues/not yet)
-- [php](../../issues/not yet)
+- [java](../../issues/100)
+- [php](../../issues/93)
 
 ### Node
 
