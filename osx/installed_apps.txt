@@ -1,7 +1,7 @@
-total 36784
-drwxrwxr-x+ 128 root       admin      4352  5 28 17:53 .
+total 36776
+drwxrwxr-x+ 128 root       admin      4352  5 28 21:21 .
 drwxr-xr-x   33 root       wheel      1190  5 21 01:51 ..
--rw-rw-r--    1 root       admin     36868  5 28 00:00 .DS_Store
+-rw-rw-r--    1 root       admin     34820  5 28 18:56 .DS_Store
 -rw-r--r--    1 root       wheel         0  7 31  2016 .localized
 drwxrwxr-x    3 root       admin       102  3  7 14:59 Adobe
 drwxr-xr-x@   5 root       admin       170  4 12 10:41 Adobe Creative Cloud
@@ -104,7 +104,7 @@ drwxr-xr-x+  27 root       admin       918  5 12 14:28 Utilities
 drwxr-xr-x@   3 root       wheel       102  4 15  2016 VMware Fusion.app
 drwxr-xr-x    3 root       admin       102  5 26  2016 VirtualBox.app
 drwxr-xr-x    3 magicdawn  staff       102  4  7 12:59 Visual Studio Code.app
-drwxr-xr-x    3 root       wheel       102  5  8 08:17 WeChat.app
+drwxr-xr-x    3 root       wheel       102  5 28 21:21 WeChat.app
 drwxr-xr-x@   3 magicdawn  admin       102  3 18 02:00 WebStorm.app
 drwxr-xr-x    3 root       wheel       102  2  6 13:29 Window Tidy.app
 drwxr-xr-x    3 root       wheel       102  4 22 21:20 Xcode.app

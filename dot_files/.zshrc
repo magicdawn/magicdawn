@@ -159,9 +159,9 @@ eval "$(rbenv init -)"
 # dotnet
 export PATH="$PATH:/usr/local/share/dotnet"
 
-# 
+#
 # python
-# 
+#
 
 # pyenv
 if which pyenv > /dev/null; then
@@ -289,3 +289,10 @@ export SDKMAN_DIR="/Users/magicdawn/.sdkman"
 #
 export PGDATA='/Users/magicdawn/data/pgdata'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#
+# GPG
+# brew install gpg
+# https://stackoverflow.com/a/42265848
+#
+export GPG_TTY=$(tty)
