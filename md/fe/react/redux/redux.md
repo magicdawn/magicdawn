@@ -80,8 +80,6 @@ const applyMiddleware = (store, middlewares) {
 }
 ```
 
-
-
 middleware 示例
 
 ```js
@@ -91,8 +89,6 @@ const mid = store => next => action => {
   // store.dispatch != next, 使用 store.dispatch 从新开始 dispatch
 }
 ```
-
-
 
 ### redux-thunk
 
@@ -108,4 +104,104 @@ const mid = store => next => action => {
    ```
 
 2. `dispatch` 一个 `fn = dispatch => { ... }`
+
+
+
+
+## enhancer
+
+```flow
+type StoreCreator = (reducer: Reducer, preloadedState: ?State) => Store
+type StoreEnhancer = (next: StoreCreator) => StoreCreator
+```
+
+> A store enhancer is a higher-order function that composes a store creator to return a new, enhanced store creator. This is similar to middleware in that it allows you to alter the store interface in a composable way.
+
+store enhancer 是一个高阶函数, 参数是一个 store creator, 返回一个 enhanced store creator. 和中间件类似, 这允许你以一个可组合的方式修改 store.
+
+例如 `applyMiddlewares(arr)` 的结果就是一个 enhancer
+
+
+
+## compose
+
+http://redux.js.org/docs/api/compose.html
+
+- Composes functions from right to left.
+
+- > Each function is expected to accept a single parameter. Its return value will be provided as an argument to the function standing to the left, and so on. The exception is the right-most argument which can accept multiple parameters, as it will provide the signature for the resulting composed function.
+
+  每一个函数都接收一个参数, 它的返回值会被提供给左边的函数的入参. 例外的是, 最右边的函数可以接收多个参数, 它会提供整个 compose 调用返回的函数的签名
+
+```js
+export default function compose(...funcs) {
+  if (funcs.length === 0) {
+    return arg => arg
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0]
+  }
+
+  return funcs.reduce((a, b) => (...args) => a(b(...args)))
+}
+```
+
+实例分析
+```js
+compose([
+  fn1, fn2, fn3
+])
+```
+
+1. a=fn1, b=fn2, ret1 = (...args) => fn1(fn2(...args))
+2. a = ret1, b = fn3, ret2 = (...args) => ret1(fn3(...args))
+
+相当于 (...args) => fn1(fn2(fn3(...args)))
+
+
+
+## applyMiddleware
+
+```js
+export default function applyMiddleware(...middlewares) {
+  return (createStore) => (reducer, preloadedState, enhancer) => {
+    const store = createStore(reducer, preloadedState, enhancer)
+    let dispatch = store.dispatch
+    let chain = []
+
+    const middlewareAPI = {
+      getState: store.getState,
+      dispatch: (action) => dispatch(action)
+    }
+    chain = middlewares.map(middleware => middleware(middlewareAPI))
+    dispatch = compose(...chain)(store.dispatch)
+
+    return {
+      ...store,
+      dispatch
+    }
+  }
+}
+```
+
+
+
+## API
+
+### createStore
+
+```js
+store = createStore(
+  reduver,
+  initialState,
+  enchancer
+)
+```
+
+
+
+
+
+
 
