@@ -6,15 +6,9 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="steeef"
+# ZSH_THEME="steeef"
 # ZSH_THEME="ys"
-# ZSH_THEME="pure"
-
-#
-# pure
-#
-# autoload -U promptinit; promptinit
-# prompt pure
+# ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -66,6 +60,14 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
+#
+# pure
+#
+PURE_PROMPT_SYMBOL='$'
+fpath+=("/usr/local/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -173,7 +175,8 @@ alias py='python'
 
 # JAVA
 export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
-export CLASSPATH=".:$JAVA_HOME/lib"
+export CATALINA_HOME="$HOME/Downloads/dev_soft/apache-tomcat-9.0.0.M21"
+export CLASSPATH=".:$JAVA_HOME/lib:$CATALINA_HOME/lib/servlet-api.jar"
 
 # groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec

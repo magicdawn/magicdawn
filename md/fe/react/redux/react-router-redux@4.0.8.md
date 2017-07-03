@@ -30,3 +30,15 @@ const history = syncHistoryWithStore(browserHistory, store)
 </Router>
 ```
 
+syncHistoryWithStore code:
+
+```js
+const handleLocationChange = location => {
+  ...
+  store.dispatch({
+    type: '@@router/LOCATION_CHANGE',
+    payload: location
+  })
+  ...
+}
+```
