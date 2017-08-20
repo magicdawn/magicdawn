@@ -5,10 +5,10 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="steeef"
 # ZSH_THEME="ys"
-# ZSH_THEME="agnoster"
+# ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,12 +52,18 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm gulp brew fasd hub httpie)
+plugins=(git sudo osx node npm gulp brew fasd hub httpie)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+#
+# spaceship zsh-theme config
+# https://github.com/denysdovhan/spaceship-zsh-theme
+#
+SPACESHIP_GOLANG_SHOW="false"
 
 source $ZSH/oh-my-zsh.sh
 
