@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source ~/.zshrc
+
 # check
 EXPECT_PWD='magicdawn_magicdawn'
 if [ $(basename $(pwd)) != "$EXPECT_PWD" ]; then
