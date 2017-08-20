@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
+
+source ~/.zshrc
 
 # check
 EXPECT_PWD='magicdawn_magicdawn'
