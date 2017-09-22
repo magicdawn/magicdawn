@@ -1,15 +1,15 @@
 total 36776
-drwxrwxr-x+ 124 root       admin      4216  8 18 11:25 .
-drwxr-xr-x   33 root       wheel      1190  8  2 20:46 ..
--rw-rw-r--    1 root       admin     34820  8 17 16:54 .DS_Store
+drwxrwxr-x+ 125 root       admin      4250  9 22 10:21 .
+drwxr-xr-x   34 root       wheel      1224  8 21 15:17 ..
+-rw-rw-r--    1 root       admin     34820  9 21 10:32 .DS_Store
 -rw-r--r--    1 root       wheel         0  7 31  2016 .localized
-drwxrwxr-x    3 root       admin       102  3  7 14:59 Adobe
+drwxrwxr-x    3 root       admin       102  3  7  2017 Adobe
 drwxrwxr-x@  10 root       admin       340  4 12 10:43 Adobe Photoshop CC 2015.5
 drwxr-xr-x@   3 magicdawn  admin       102  6  1  2016 Alfred 3.app
 drwxr-xr-x    3 magicdawn  staff       102  4 12 14:12 AliWangwang.app
 drwxr-xr-x@   3 magicdawn  admin       102  4  5  2016 Android Studio.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 App Store.app
-drwxr-xr-x    3 magicdawn  staff       102  8 16 12:39 Atom.app
+drwxr-xr-x    3 magicdawn  staff       102  9 18 07:09 Atom.app
 drwxr-xr-x    6 root       admin       204  6 28 20:36 Autodesk
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Automator.app
 drwxr-xr-x@   3 magicdawn  admin       102  5 25 10:51 BaiduNetdisk_mac.app
@@ -23,24 +23,24 @@ drwxr-xr-x@   3 magicdawn  admin       102  9 22  2016 CleanMyMac 3.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Contacts.app
 drwxr-xr-x@   3 magicdawn  staff       102 10  6  2016 Cyberduck.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 DVD Player.app
-drwxr-xr-x@   3 magicdawn  admin       102  3  4 21:43 Dash.app
+drwxr-xr-x@   3 magicdawn  admin       102  3  4  2017 Dash.app
 drwxr-xr-x@   3 root       wheel       102  4 16 23:34 Dashboard.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Dictionary.app
 drwxr-xr-x    4 root       wheel       136  5 26  2016 Docker
 drwxr-xr-x    3 magicdawn  staff       102  1 20  2017 EasyConnect.app
-drwxr-xr-x    3 magicdawn  admin       102  4 12 21:01 Evernote.app
+drwxr-xr-x    3 magicdawn  admin       102  9 20 10:37 Evernote.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 FaceTime.app
 drwxr-xr-x@   3 magicdawn  staff       102  7  1 12:19 Flux.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Font Book.app
 drwxr-xr-x@   3 magicdawn  staff       102  4 13  2011 ForkLift.app
 drwxr-xr-x    3 root       wheel       102  6  9 15:32 Foxmail.app
-drwxr-xr-x@   3 root       wheel       102  8  2 08:12 Google Chrome.app
+drwxr-xr-x@   3 root       wheel       102  8 23 09:12 Google Chrome.app
 drwxr-xr-x@   3 magicdawn  admin       102  3 14  2015 Haroopad.app
 drwxr-xr-x    3 magicdawn  staff       102  5 12 21:57 Hyper.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Image Capture.app
 drwxr-xr-x    3 magicdawn  staff       102  5  4 02:02 Insomnia.app
-drwxr-xr-x@   3 magicdawn  admin       102  3 22 17:09 IntelliJ IDEA.app
-drwxr-xr-x    3 root       wheel       102  6 15 21:58 Keynote.app
+drwxr-xr-x@   3 magicdawn  admin       102  3 22  2017 IntelliJ IDEA.app
+drwxr-xr-x    3 root       wheel       102  9 22 10:19 Keynote.app
 drwxr-xr-x@   3 magicdawn  staff       102 12 22  2014 LICEcap.app
 drwxr-xr-x@   3 root       wheel       102  4 16 23:34 Launchpad.app
 drwxr-xr-x@   3 magicdawn  staff       102  9 11  2016 MPlayerX.app
@@ -59,15 +59,16 @@ drwxr-xr-x    3 magicdawn  admin       102 10 17  2016 Navicat Premium.app
 drwxr-xr-x@   3 magicdawn  admin       102  6 21 18:43 NeteaseMusic.app
 drwxr-xr-x@   3 magicdawn  admin       102  3 26  2016 Noizio.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Notes.app
-drwxr-xr-x    3 root       wheel       102  6 15 21:58 Numbers.app
+drwxr-xr-x    3 root       wheel       102  9 22 10:20 Numbers.app
 drwxr-xr-x    3 magicdawn  staff       102 12 31  2013 OmniDiskSweeper.app
 drwxr-xr-x@   3 magicdawn  admin       102  9 20  2016 OmniFocus.app
 drwxr-xr-x@   3 magicdawn  admin       102 10  8  2016 OmniGraffle.app
+drwxr-xr-x@   3 magicdawn  admin       102  8 20 02:09 Oni.app
 drwxr-xr-x    3 root       wheel       102  6 15 21:58 Pages.app
 drwxr-xr-x@   4 root       wheel       136  5 22  2016 Parallels Desktop.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Photo Booth.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Photos.app
-drwxr-xr-x    3 root       wheel       102  3 10 00:48 PicU.app
+drwxr-xr-x    3 root       wheel       102  3 10  2017 PicU.app
 drwxr-xr-x@   3 magicdawn  admin       102  2 24  2016 PopClip.app
 drwxrwxr-x    3 root       admin       102  7  9 12:14 PopcornTime.app
 drwxr-xr-x@   3 magicdawn  admin       102 10 12  2016 Postico.app
@@ -80,9 +81,9 @@ drwxr-xr-x@   3 magicdawn  admin       102  1  1  2014 Rar Sharp.app
 drwxr-xr-x    3 magicdawn  staff       102  1 12  2016 RecordIt.app
 drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Reminders.app
 drwxr-xr-x    3 magicdawn  staff       102  6  5  2016 Robomongo.app
-drwxr-xr-x    3 root       wheel       102  5 29 21:56 SHPlayer.app
+drwxr-xr-x    3 root       wheel       102  9 13 10:42 SHPlayer.app
 drwxr-xr-x@   3 magicdawn  admin       102  6  9 16:31 STunGUI.app
-drwxr-xr-x@   3 root       wheel       102  8  2 20:47 Safari.app
+drwxr-xr-x@   3 root       wheel       102  9 20 23:00 Safari.app
 drwxr-xr-x@   3 magicdawn  staff       102 11 11  2016 Scroll Reverser.app
 -rwx------@   1 magicdawn  staff  17127744  3 24  2016 SecureCRT
 drwxr-xr-x@   3 magicdawn  admin       102  7 24 08:00 ShadowsocksX-NG-R8.app
@@ -98,14 +99,14 @@ drwxr-xr-x@   3 root       wheel       102  8  2 20:47 TextEdit.app
 drwxr-xr-x@   3 magicdawn  admin       102  5 11 17:51 Thunder.app
 drwxr-xr-x@   3 root       wheel       102  5 21 01:53 Time Machine.app
 drwxr-xr-x    3 root       admin       102  5 22  2016 TotalFinder.app
-drwxr-xr-x    3 magicdawn  staff       102  8 18 11:25 Typora.app
-drwxr-xr-x+  26 root       admin       884  8  9 12:12 Utilities
+drwxr-xr-x    3 magicdawn  staff       102  9  6 10:00 Typora.app
+drwxr-xr-x+  26 root       admin       884  9 13 11:37 Utilities
 drwxr-xr-x    3 root       admin       102  5 26  2016 VirtualBox.app
-drwxr-xr-x    3 magicdawn  staff       102  5  9 19:25 Visual Studio Code.app
-drwxr-xr-x    3 root       wheel       102  8 17 21:12 WeChat.app
-drwxr-xr-x@   3 magicdawn  admin       102  3 18 02:00 WebStorm.app
+drwxr-xr-x    3 magicdawn  staff       102  8 24 10:44 Visual Studio Code.app
+drwxr-xr-x    3 root       wheel       102  9 10 15:45 WeChat.app
+drwxr-xr-x@   3 magicdawn  admin       102  3 18  2017 WebStorm.app
 drwxr-xr-x@   3 magicdawn  admin       102  5  2 11:00 XMind.app
-drwxr-xr-x    3 root       wheel       102  6  7 00:55 Xcode.app
+drwxr-xr-x    3 root       wheel       102  9 22 10:21 Xcode.app
 drwxr-xr-x@   3 magicdawn  admin       102  6 12 19:48 YoudaoNote.app
 drwxr-xr-x@   3 magicdawn  staff       102  7 31  2016 Yummy FTP.app
 -rw-r--r--@   1 magicdawn  admin   1656087  3  3  2016 aria2.pkg
@@ -115,11 +116,11 @@ drwxr-xr-x+   3 root       wheel       102  8  2 20:47 iBooks.app
 drwxr-xr-x@   3 magicdawn  admin       102  6 22  2016 iPic.app
 drwxr-xr-x    3 magicdawn  staff       102  4  8 10:02 iTerm.app
 drwxr-xr-x@   3 magicdawn  admin       102  1 25  2016 iToneSync.app
-drwxr-xr-x+   3 root       wheel       102  7 21 09:39 iTunes.app
+drwxr-xr-x+   3 root       wheel       102  9 13 10:45 iTunes.app
 lrwxr-xr-x    1 magicdawn  admin        26  5  8  2016 mpv.app -> /usr/local/opt/mpv/mpv.app
 drwxr-xr-x    3 magicdawn  staff       102 11 25  2015 rdm.app
-drwxr-xr-x    3 root       wheel       102  6 26 10:20 优酷.app
-drwxr-xr-x@   3 magicdawn  admin       102  7 11 11:38 钉钉.app
-drwxr-xr-x    3 root       wheel       102  8 16 14:35 爱奇艺.app
+drwxr-xr-x    3 root       wheel       102  8 27 22:43 优酷.app
+drwxr-xr-x@   3 magicdawn  admin       102  8 30 13:52 钉钉.app
+drwxr-xr-x    3 root       wheel       102  9 15 16:52 爱奇艺.app
 drwxr-xr-x    3 root       wheel       102 10 14  2016 爱壁纸HD.app
 drwxr-xr-x@   3 magicdawn  admin       102  5 16  2016 老虎股票.app
