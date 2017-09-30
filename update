@@ -23,4 +23,4 @@ update_at=$(date +"%Y-%m-%d %H:%M:%S")
 git commit -am "update at $update_at"
 
 # push
-pc git push origin master
+git push origin master
