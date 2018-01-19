@@ -194,7 +194,10 @@ alias aria2c-rpc='aria2c --enable-rpc --rpc-allow-origin-all'
 . "/Users/magicdawn/.acme.sh/acme.sh.env"
 
 # fengjr配置
-source ~/.fengjrrc
+# source ~/.fengjrrc
+
+# dd
+source ~/.didirc
 
 # 本机 ip
 function myip(){
