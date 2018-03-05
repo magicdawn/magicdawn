@@ -7,8 +7,7 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="ys"
 # ZSH_THEME="spaceship"
-# ZSH_THEME="spaceship"
-# ZSH_THEME="spaceship"
+ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -70,10 +69,10 @@ source $ZSH/oh-my-zsh.sh
 #
 # pure
 #
-PURE_PROMPT_SYMBOL='$'
-fpath+=("/usr/local/share/zsh/site-functions")
-autoload -U promptinit; promptinit
-prompt pure
+# PURE_PROMPT_SYMBOL='$'
+# fpath+=("/usr/local/share/zsh/site-functions")
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -269,14 +268,14 @@ alias antonov="ipad"
 # composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
-function http-proxy-ybb(){
-  export http_proxy=http://127.0.0.1:9743
+# http_proxy
+function http-proxy-setup(){
+  export http_proxy=http://127.0.0.1:1087
   export https_proxy=$http_proxy
 }
-
-function http-proxy-socks(){
-  export http_proxy=http://127.0.0.1:10086
-  export https_proxy=$http_proxy
+function http-proxy-clean(){
+  unset http_proxy
+  unset https_proxy
 }
 
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
