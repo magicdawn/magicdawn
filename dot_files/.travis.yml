@@ -1,9 +1,10 @@
 language: node_js
 node_js:
-  - "v4"
-  - "v5"
-  - "v6"
+  - v7.6.0
+  - v8
+  - v9
+  - v10
 script: "npm run test-cover"
-after_script: "cat ./coverage/lcov.info | coveralls"
+after_script: "npm run report-cover"
 notifications:
   email: false
