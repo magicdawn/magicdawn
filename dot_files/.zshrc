@@ -200,9 +200,8 @@ source ~/.didirc
 
 # 本机 ip
 function myip(){
-  ifconfig | grep 10.254.111 | awk '{ print $2 }'
+  ifconfig | grep 172. | awk '{ print $2 }'
 }
-export MYIP=`ifconfig | grep 10.254.111 | awk '{ print $2 }'`
 
 # npm proxy
 # 1. npm -> 8000(http) -> 1080(shadowsocks) -> npm_registry
