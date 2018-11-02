@@ -147,11 +147,11 @@ lrwxr-xr-x    1 magicdawn  admin        26 May  8  2016 mpv.app -> /usr/local/op
 drwxr-xr-x    3 magicdawn  staff        96 Nov 25  2015 rdm.app
 drwxr-xr-x    3 magicdawn  admin        96 Jun 12 15:38 wechatwebdevtools.app
 drwxrwxr-x    3 magicdawn  admin        96 Aug 31 10:17 zoom.us.app
-drwxr-xr-x    3 root       wheel        96 Oct 23 10:24 优酷.app
-drwxr-xr-x    3 root       wheel        96 Sep  5 11:46 爱奇艺.app
-drwxr-xr-x    3 root       wheel        96 Oct 14  2016 爱壁纸HD.app
 drwxr-xr-x@   3 magicdawn  admin        96 Aug 31 08:14 人人影视.app
+drwxr-xr-x    3 root       wheel        96 Oct 23 10:24 优酷.app
 drwxr-xr-x    3 root       wheel        96 Nov  2 10:05 印象笔记.app
+drwxr-xr-x    3 root       wheel        96 Oct 14  2016 爱壁纸HD.app
+drwxr-xr-x    3 root       wheel        96 Sep  5 11:46 爱奇艺.app
+drwxr-xr-x@   3 magicdawn  admin        96 Dec 27  2017 网易有道词典.app
 drwxr-xr-x@   3 magicdawn  admin        96 May 16  2016 老虎股票.app
 drwxr-xr-x    3 root       wheel        96 Oct 28 15:02 虾米音乐.app
-drwxr-xr-x@   3 magicdawn  admin        96 Dec 27  2017 网易有道词典.app
