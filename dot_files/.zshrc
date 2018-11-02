@@ -218,7 +218,6 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 # 默认就是
 # --conf-path=$HOME/.aria2/aria2.conf
 alias aria2c-rpc='aria2c --enable-rpc --rpc-allow-origin-all'
-. "/Users/magicdawn/.acme.sh/acme.sh.env"
 
 # dd
 [ -f ~/.didirc ] && source ~/.didirc
