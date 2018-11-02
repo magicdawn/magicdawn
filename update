@@ -9,9 +9,6 @@ if [ $(basename $(pwd)) != "$EXPECT_PWD" ]; then
   exit
 fi
 
-# backup zshrc
-cp ~/.zshrc $(pwd)/dot_files/
-
 # backup osx installed apps
 ls -al /Applications > osx/installed_apps.txt
 
