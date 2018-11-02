@@ -13,6 +13,7 @@ fi
 ls -al /Applications > osx/installed_apps.txt
 
 # brew backup
+# `brew bundle` to restore
 brew bundle dump --force
 
 # add
