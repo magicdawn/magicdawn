@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/magicdawn/.oh-my-zsh
+# export ZSH=/Users/magicdawn/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -7,7 +7,7 @@ export ZSH=/Users/magicdawn/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="ys"
 # ZSH_THEME="spaceship"
-ZSH_THEME="steeef"
+# ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,28 +51,54 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo osx node npm gulp brew fasd hub httpie)
-
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+# plugins=(
+#   git sudo osx brew fasd
+#   node npm gulp
+#   hub httpie
+#   zsh-completions
+# )
 
 #
 # spaceship zsh-theme config
 # https://github.com/denysdovhan/spaceship-zsh-theme
 #
-SPACESHIP_GOLANG_SHOW="false"
+# SPACESHIP_GOLANG_SHOW="false"
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
-#
-# pure
-#
-# PURE_PROMPT_SYMBOL='$'
-# fpath+=("/usr/local/share/zsh/site-functions")
-# autoload -U promptinit; promptinit
-# prompt pure
+# zsh package management
+source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle sudo
+antigen bundle osx
+antigen bundle fasd
+antigen bundle command-not-found
+antigen bundle node
+antigen bundle npm
+antigen bundle gulp
+antigen bundle pip
+antigen bundle hub
+antigen bundle httpie
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
+# Load the theme.
+# antigen theme ys
+antigen theme steeef
+# antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+
+# Tell Antigen that you're done.
+antigen apply
+
+# suggestion
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -98,6 +124,10 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# User configuration
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
 
 #
 # try to be humble
@@ -127,6 +157,7 @@ export DOT_FILES='https://raw.githubusercontent.com/magicdawn/magicdawn/master/d
 ## nvm
 export NVM_DIR="/Users/magicdawn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ## nvm proxy
 export NODEJS_ORG_MIRROR="http://npm.taobao.org/mirrors/node/"
@@ -159,9 +190,6 @@ alias npm-taobao-registry="npm --registry=https://registry.npm.taobao.org \
 # golang
 export GOPATH=/Users/magicdawn/gopath
 export PATH=$PATH:$GOPATH/bin
-
-# rbenv
-eval "$(rbenv init -)"
 
 # dotnet
 export PATH="$PATH:/usr/local/share/dotnet"
@@ -306,3 +334,12 @@ export PGDATA='/Users/magicdawn/data/pgdata'
 # https://stackoverflow.com/a/42265848
 #
 export GPG_TTY=$(tty)
+
+###-tns-completion-start-###
+if [ -f /Users/magicdawn/.tnsrc ]; then
+    source /Users/magicdawn/.tnsrc
+fi
+###-tns-completion-end-###
+
+# android
+export ANDROID_HOME="/usr/local/share/android-sdk"
