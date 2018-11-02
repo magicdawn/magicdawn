@@ -12,6 +12,9 @@ fi
 # backup osx installed apps
 ls -al /Applications > osx/installed_apps.txt
 
+# brew backup
+brew bundle dump --force
+
 # add
 git add --all
 
