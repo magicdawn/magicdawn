@@ -1,3 +1,30 @@
+FE:
+  - JS tricks: 33
+  - vue@2: 107
+  - vuex: 108
+  - react: 8
+  - vue: 34
+  - angular: 70
+
+FE Tools:
+  - webpack: 7
+  - babel@7: 111
+  - rollup: 109
+
+CSS:
+  - CSS效果: 37
+  - 动画: 15
+  - 字体: 16
+  - 颜色: 41
+
+Tools:
+  - curl: 73
+  - nginx: 58
+  - Atom: 55
+  - vim: 91
+  - git: 65
+  - Linux 命令行: 40
+
 CS:
   - "Linux/Unix 系统编程手册": 62
   - "TCP/IP 详解卷一: 协议": 82
@@ -24,21 +51,6 @@ Node:
   - v8: 68
   - gyp: 67
   - libuv: 50
-
-Frameworks:
   - Express: 24
   - koa: 19
   - Sails: 72
-
-Tools:
-  - curl: 73
-  - nginx: 58
-  - Atom: 55
-  - vim: 91
-
-FE:
-  - JS tricks: 33
-  - angular: 70
-  - vue: 34
-  - react: 8
-  - webpack: 7
