@@ -147,7 +147,8 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:.
 
 # cario
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+# libffi
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig"
 
 # DOT_FILES
 # Example: wget -q $DOT_FILES/.eslintrc

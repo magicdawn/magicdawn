@@ -39,6 +39,7 @@ const make = _.debounce(() => {
 
   // locals
   let toc = yaml.load(readSync(__dirname + '/readme.yml'));
+  debug('toc = %j', toc)
   toc = _.map(toc, (v,k) => {
     return {
       title: k,
