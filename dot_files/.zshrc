@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-# export ZSH=/Users/magicdawn/.oh-my-zsh
+# export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -189,7 +189,7 @@ alias npm-taobao-registry="npm --registry=https://registry.npm.taobao.org \
 --userconfig=$HOME/.cnpmrc"
 
 # golang
-export GOPATH=/Users/magicdawn/gopath
+export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOPATH/bin
 
 # dotnet
@@ -315,14 +315,14 @@ alias proxy='proxychains4'
 #
 export PATH="$PATH:/usr/local/sbin/"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/magicdawn/.sdkman"
-[[ -s "/Users/magicdawn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magicdawn/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 #
 # postgres
 #
-export PGDATA='/Users/magicdawn/data/pgdata'
+export PGDATA='$HOME/data/pgdata'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #
@@ -333,8 +333,8 @@ export PGDATA='/Users/magicdawn/data/pgdata'
 export GPG_TTY=$(tty)
 
 ###-tns-completion-start-###
-if [ -f /Users/magicdawn/.tnsrc ]; then
-    source /Users/magicdawn/.tnsrc
+if [ -f $HOME/.tnsrc ]; then
+    source $HOME/.tnsrc
 fi
 ###-tns-completion-end-###
 
