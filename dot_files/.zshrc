@@ -340,3 +340,5 @@ fi
 
 # android
 export ANDROID_HOME="/usr/local/share/android-sdk"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
