@@ -1,14 +1,13 @@
-### oh-my-zsh
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+# ZSH_THEME="ys"
 # ZSH_THEME="spaceship"
 # ZSH_THEME="steeef"
-ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,20 +51,54 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git sudo osx brew fasd
-  node npm gulp
-  hub httpie
-  zsh-completions
-  zsh-syntax-highlighting
-)
+# plugins=(
+#   git sudo osx brew fasd
+#   node npm gulp
+#   hub httpie
+#   zsh-completions
+# )
 
-autoload -U compinit && compinit
-source $ZSH/oh-my-zsh.sh
+#
+# spaceship zsh-theme config
+# https://github.com/denysdovhan/spaceship-zsh-theme
+#
+# SPACESHIP_GOLANG_SHOW="false"
+
+# source $ZSH/oh-my-zsh.sh
+
+# zsh package management
+source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle sudo
+antigen bundle osx
+antigen bundle fasd
+antigen bundle command-not-found
+antigen bundle node
+antigen bundle npm
+antigen bundle gulp
+antigen bundle pip
+antigen bundle hub
+antigen bundle httpie
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
+# Load the theme.
+# antigen theme ys
+antigen theme steeef
+# antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+
+# Tell Antigen that you're done.
+antigen apply
 
 # suggestion
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-### oh-my-zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -301,10 +334,11 @@ export GPG_TTY=$(tty)
 
 ###-tns-completion-start-###
 if [ -f $HOME/.tnsrc ]; then
-  source $HOME/.tnsrc
+    source $HOME/.tnsrc
 fi
 ###-tns-completion-end-###
 
 # android
 export ANDROID_HOME="/usr/local/share/android-sdk"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
