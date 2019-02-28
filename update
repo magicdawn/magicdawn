@@ -14,7 +14,7 @@ ls -al /Applications > osx/installed_apps.txt
 
 # brew backup
 # `brew bundle` to restore
-brew bundle dump --force
+# brew bundle dump --force
 
 # add
 git add --all
@@ -24,4 +24,5 @@ update_at=$(date +"%Y-%m-%d %H:%M:%S")
 git commit -am "update at $update_at"
 
 # push
-pc git push origin master
+# pc git push origin master
+git push origin master
