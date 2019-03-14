@@ -1,8 +1,4 @@
-const input = "100+31*5/6-2+3*6";
-const val = calc(input);
-console.log(val)
-
-function calc(s) {
+exports.calc = function calc(s) {
   let parts = s.split(/\b(?=[\+\-\*\/\d])/);
   let stack = []
   let stackLast = () => stack[stack.length -1]
@@ -64,4 +60,10 @@ function calc(s) {
 
   const val = stack.pop()
   return val
+}
+
+if (require.main === module) {
+  const input = "100+31*5/6-2+3*6";
+  const val = exports.calc(input);
+  console.log(val)
 }
