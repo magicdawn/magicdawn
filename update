@@ -10,7 +10,7 @@ if [ $(basename $(pwd)) != "$EXPECT_PWD" ]; then
 fi
 
 # backup osx installed apps
-ls -al /Applications > osx/installed_apps.txt
+# ls -al /Applications > osx/installed_apps.txt
 
 # brew backup
 # `brew bundle` to restore
