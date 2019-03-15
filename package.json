@@ -20,6 +20,20 @@
     "sequelize": "^3.23.3"
   },
   "devDependencies": {
-    "shelljs": "^0.8.2"
+    "shelljs": "^0.8.2",
+    "husky": "latest",
+    "prettier": "latest",
+    "lint-staged": "latest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,less,vue,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
