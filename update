@@ -1,21 +1,5 @@
 #!/usr/bin/env zsh
 
-source ~/.zshrc
-
-# check
-EXPECT_PWD='magicdawn_magicdawn'
-if [ $(basename $(pwd)) != "$EXPECT_PWD" ]; then
-  echo 'run `update` in a `magicdawn_magicdawn` directory'
-  exit
-fi
-
-# backup osx installed apps
-# ls -al /Applications > osx/installed_apps.txt
-
-# brew backup
-# `brew bundle` to restore
-# brew bundle dump --force
-
 # add
 git add --all
 
@@ -24,5 +8,4 @@ update_at=$(date +"%Y-%m-%d %H:%M:%S")
 git commit -am "update at $update_at"
 
 # push
-# pc git push origin master
 git push origin master
