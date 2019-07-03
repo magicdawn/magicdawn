@@ -10,13 +10,19 @@ var findTargetSumWays = function(nums, S) {
   const rest = nums.slice(1)
 
   // 剪枝
-  if (nums.length === 1) {
-    // S = cur = 0, 返回 2, because +0 / -0 不影响
-    let rate = 0
-    if (cur === S) rate++
-    if (cur === -S) rate++
-    return rate
+  if (nums.length === 0) {
+    if (S === 0) return 1
+    else return 0
   }
+
+  // 剪枝
+  // if (nums.length === 1) {
+  //   // S = cur = 0, 返回 2, because +0 / -0 不影响
+  //   let rate = 0
+  //   if (cur === S) rate++
+  //   if (cur === -S) rate++
+  //   return rate
+  // }
 
   // 其他
   const positive = findTargetSumWays(rest, S - cur) // +cur + rest = S
