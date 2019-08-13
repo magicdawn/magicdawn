@@ -1,0 +1,54 @@
+# v6
+
+## links
+
+- https://cn.rx.js.org/manual/overview.html#h16
+- https://github.com/joeyguo/blog/issues/11
+
+## 基本概念 Observable / Observer
+
+![2016-11-01 9 53 52](https://cloud.githubusercontent.com/assets/10385585/19889545/58dababe-a070-11e6-8e54-be78121f9ba1.png)
+
+我的理解
+
+```js
+// Observable
+Subscription Observable.prototype.subscribe(Observer)
+
+// Observer
+type Observer {
+  next()
+  error()
+  complete()
+}
+
+// Subscription
+type Subscription{
+  unsunscribe()
+}
+```
+
+- Observable 上有一个方法 `subscribe` 用于从数据源订阅
+- Observer 是数据接收者, 有几个方法, `next` / `error` /`complete` 在收到相应的事件的时候会被调用
+- 订阅类型 `Subscription` 有一个实例函数 `unsubscribe`, 取消订阅
+
+## 操作符
+
+`Rx.Observable` 上的方法称为操作符.
+
+- `Rx.Observable.method` 静态操作符
+- `Rx.Observable#method` 实例操作符
+
+## `Rx.Observable.create`
+
+地位类似于 `new Promise`
+
+```js
+const observable = Rx.Observable.create(function(observer) {
+  // observer.next()
+  // observer.error()
+  // observer.complete()
+})
+```
+
+其中的 `observer` 表示返回的 `observable` 底层数据来源.
