@@ -62,3 +62,35 @@ const handleSubmit = useCallback(() => {
 
 不在于避免每次重新创建 inline function, 避免不了, `fn1` & `fn2`
 而在于能保持不变, 第二次调用返回 `fn1`
+
+### 正解 1, 标记 dep
+
+```js
+const handleSubmit = useCallback(
+  () => {
+    console.log(text)
+  },
+  [text]
+)
+```
+
+这样调用 2, 因为 dep 不等, 会返回 fn2, 闭包引用 `text-content-2`
+
+### 正解 2, 如果 dep 经常变化, 意味着 useCallback 结果会经常变化
+
+这个时候可以使用 useRef, 相当于加一层跳板
+
+- 每次更新 `ref` 不变
+- ref.current 设置为 `fn1` / `fn2` / ...
+- handleSubmit 不变, 内部调用 `ref.current`
+
+```js
+const ref = useRef()
+ref.current = () => {
+  console.log(text)
+}
+
+const handleSubmit = useCallback((...args) => {
+  ref.current(...args)
+}, [])
+```
