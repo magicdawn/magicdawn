@@ -24,12 +24,9 @@ useCallback(fn, dep) === useMemo(() => fn, dep)
 function Form() {
   const [text, updateText] = useState('')
 
-  const handleSubmit = useCallback(
-    () => {
-      console.log(text)
-    },
-    [text]
-  ) // 每次 text 变化时 handleSubmit 都会变
+  const handleSubmit = useCallback(() => {
+    console.log(text)
+  }, [text]) // 每次 text 变化时 handleSubmit 都会变
 
   return (
     <>
@@ -66,12 +63,9 @@ const handleSubmit = useCallback(() => {
 ### 正解 1, 标记 dep
 
 ```js
-const handleSubmit = useCallback(
-  () => {
-    console.log(text)
-  },
-  [text]
-)
+const handleSubmit = useCallback(() => {
+  console.log(text)
+}, [text])
 ```
 
 这样调用 2, 因为 dep 不等, 会返回 fn2, 闭包引用 `text-content-2`
