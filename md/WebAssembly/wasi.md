@@ -25,3 +25,9 @@ WASI 规范只是指定一个方法名, 由 WASI runtime 去实现这些个方�
 全部实现不太现实, 可以选择需要的模块实现, 比如实现了 wasi-core 就可以处理文件和网络了.
 原文
 > This way, we can get good standardization coverage while still allowing niche platforms to use only the parts of WASI that make sense for them.
+
+栗子
+https://github.com/bytecodealliance/wasmtime/blob/master/docs/WASI-tutorial.md#web-assembly-text-example
+
+写一个wat, 调用 `importsObject.wasi_unstable.fd_write`
+然后使用实现 wasi 规范的 wasmtime 去运行, 就会提供上面这个方法
