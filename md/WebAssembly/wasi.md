@@ -11,7 +11,7 @@ POSIX = Portable Operating System Interface, 即多个操作系统由一样的 s
 WASI 规范只是指定一个方法名, 由 WASI runtime 去实现这些个方法.
 比如 rust 的 Open 方法, target 到 wasm 的时候, wasm (text format) 里会有 `__wasi_path_open`
 然后这个方法应该由 wasi-core 去实现, 挂到 runtime, 在运行的时候可以被调用.
-或者通过 importsObject 传进 wasm 里去
+或者通过 importObject 传进 wasm 里去
 
 ### WASI 模块化
 
@@ -29,5 +29,5 @@ WASI 规范只是指定一个方法名, 由 WASI runtime 去实现这些个方�
 栗子
 https://github.com/bytecodealliance/wasmtime/blob/master/docs/WASI-tutorial.md#web-assembly-text-example
 
-写一个wat, 调用 `importsObject.wasi_unstable.fd_write`
+写一个wat, 调用 `importObject.wasi_unstable.fd_write`
 然后使用实现 wasi 规范的 wasmtime 去运行, 就会提供上面这个方法
