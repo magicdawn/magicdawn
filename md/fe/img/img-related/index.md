@@ -46,14 +46,15 @@ fixed-length 我的理解就是, arrayBuffer.byteLength 只读, 不能直接改 
 
 > represents a bitmap image which can be drawn to a <canvas> without undue latency
 
-https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap
+- https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap
 
 ### `ImageData`
 
 > The ImageData interface represents the underlying pixel data of an area of a <canvas> element.
 
 - https://developer.mozilla.org/en-US/docs/Web/API/ImageData
-- 是一个 `Uint8ClampedArray`, 底层是 ArrayBuffer
+- `ImageData#data` 是一个 `Uint8ClampedArray`, 底层是 ArrayBuffer.
+- `ImageData#data` one-dimensional array containing the data in the RGBA order, with integer values between 0 and 255 (inclusive).
 
 ### `createImageBitmap`
 
