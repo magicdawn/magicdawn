@@ -1,14 +1,23 @@
-class JadeStyleLexer {
+const stringWidth = require('string-width')
+const _repeat = require('lodash/repeat')
+const _padStart = require('lodash/padStart')
+const debugFactory = require('debug')
+
+const DEFAULT_FILENAME = 'unknown.file'
+
+class BaseLexer {
   constructor(input, filename) {
     this.originalInput = input.replace(/\r\n|\r/g, '\n')
     this.input = this.originalInput
-    this.filename = filename
+    this.filename = filename || DEFAULT_FILENAME
 
     this.lineno = 1
     this.cursor = 0
 
     this.assertExpression = this.assertExpression.bind(this)
     this.assertCode = this.assertCode.bind(this)
+
+    this.debug = debugFactory('BaseLexer')
   }
 
   consume(len) {
@@ -28,7 +37,7 @@ class JadeStyleLexer {
 
   scan(reg, type, assert) {
     const captures = reg.exec(this.input)
-    debug('captures = %j', captures)
+    this.debug('captures = %j', captures)
     if (captures) {
       const val = captures[1]
       assert && assert(val)
@@ -56,7 +65,7 @@ class JadeStyleLexer {
   }
 
   error(message, pos) {
-    return new RactSyntaxError(message, {
+    return new SyntaxError(message, {
       input: this.originalInput,
       filename: this.filename,
       pos: pos || this.cursor,
@@ -80,44 +89,10 @@ class JadeStyleLexer {
   }
 }
 
-class Lexer extends JadeStyleLexer {
-  constructor(...args) {
-    super(...args)
-  }
-
-  // num: \d+
-  // +: +
-  // -: -
-  // *: *
-  // /: /
-  // (: (
-  // ): )
-  next() {
-    return (
-      this.eos() || this.num() || this.operator() || this.brace() || this.fail()
-    )
-  }
-
-  num() {
-    const tok = this.scan(/^\d+/, 'num')
-    tok.val = Number(tok.val)
-    return tok
-  }
-
-  operator() {
-    return this.scan(/^[+-*/]/, 'operator')
-  }
-
-  brace() {
-    return this.scan(/^[()]/, 'brace')
-  }
-}
-
-const Parser = (module.exports = class Parser {
+class BaseParser {
   constructor(input, filename, included) {
     this.input = input
     this.filename = filename
-    this.lexer = new Lexer(input, filename)
   }
 
   consume(n) {
@@ -125,7 +100,12 @@ const Parser = (module.exports = class Parser {
   }
 
   cur() {
-    return this.tokens[0]
+    return (
+      this.tokens[0] || {
+        type: 'eos',
+        val: 'end of stream',
+      }
+    )
   }
 
   expect(type, val) {
@@ -155,81 +135,89 @@ const Parser = (module.exports = class Parser {
   }
 
   parse() {
+    if (!this.lexer) {
+      throw new Error(
+        'this.lexer not found, U should init your Lexer in constructor'
+      )
+    }
+
     this.originalTokens = this.lexer.lex()
     this.tokens = this.originalTokens.slice(0)
-    this.file = new nodes.File(this.filename)
-
-    while (this.tokens.length) {
-      const n = this.parseExpr()
-    }
-
-    return this.file
   }
+}
 
-  // expr
-  //   : expr-l1
-  //
-  // // 第一层只有 +-
-  // expr-l1
-  //   : expr-l2 + expr-l2
-  //   | expr-l2 - expr-l2
-  //   | expr-l2
-  //
-  // // 第二层只有 */
-  // expr-l2
-  //   : expr-l3 * expr-l3
-  //   | expr-l3 / expr-l3
-  //   | expr-l3
-  //
-  // // 第三层, 只有数字 or 括号表达式
-  // expr-l3
-  //   : num
-  //   : '(' + expr + ')'
-  parseExpr() {
-    return this.parseExprL1()
-  }
-  parseExprL1() {
-    const left = this.parseExprL2()
+class SyntaxError extends Error {
+  constructor(message, options) {
+    super(message)
+    Error.captureStackTrace(this)
 
-    // TODO: fix this
-    // TODO: fix this
-    // TODO: fix this
-    if (
-      this.cur().type === 'operator' &&
-      ['+', '-'].includes(this.cur().type)
+    options = options || {}
+    this.input = options.input
+    this.filename = options.filename || DEFAULT_FILENAME
+    this.pos = options.pos
+
+    const tuple = this._pos()
+    this.lineno = tuple[0]
+    this.colno = tuple[1]
+
+    const arr = [
+      `File ${this.filename}, line ${this.lineno} column ${this.colno}`,
+    ]
+    for (
+      let i = this.lineno;
+      i <= Math.min(this.lineno + 2, this.lines.length);
+      i++
     ) {
-      this.consume(1)
-      const right = this.parseExprL2()
+      const content = this.lines[i - 1].replace(/\t/, '    ') // 4 space
+      arr.push(`${_padStart(i.toString(), 4, ' ')}|${content}`)
+
+      // indicator
+      if (i === this.lineno) {
+        const indent = _repeat(
+          ' ',
+          stringWidth(content.slice(0, this.colno - 1))
+        )
+        arr.push(`${_repeat(' ', 4)}|${indent}^`)
+      }
     }
-    throw new Error('unexpected')
+
+    this.stack = arr.join('\n') + '\n\n' + this.stack
   }
-  parseExprL2() {
-    const left = this.parseExprL3()
 
-    if (
-      this.cur().type === 'operator' &&
-      ['*', '/'].includes(this.cur().type)
-    ) {
-      this.consume(1)
-      const right = this.parseExprL3()
+  _pos() {
+    this.lines = this.input.split(/\n/)
+    const lens = this.lines.map(l => l.length + 1)
+
+    let lineno = 1
+    let colno = this.pos + 1 // pos 0 based
+
+    while (colno > lens[lineno - 1]) {
+      colno -= lens[lineno - 1]
+      lineno++
     }
 
-    throw new Error('unexpected')
+    return [lineno, colno]
   }
-  parseExprL3() {
-    const ret = {
-      type: 'expr-l3',
-      val: '',
-    }
+}
 
-    if (this.cur().type === 'num') {
-      ret.val = this.cur().val
-      this.consume(1)
-      return ret
-    }
+/**
+ * 给其他类使用
+ * SomeClass#error
+ */
 
-    if (this.cur().type === 'brace') {
-      // ret.nodes =
-    }
-  }
-})
+function error(message, pos) {
+  return new SyntaxError(message, {
+    input: this.input,
+    filename: this.filename,
+    pos,
+  })
+}
+
+BaseParser.prototype.error = error
+
+module.exports = {
+  BaseLexer,
+  BaseParser,
+  SyntaxError,
+  error,
+}
