@@ -230,7 +230,13 @@ module.exports = {
 }
 ```
 
+### FooLexer
+
 - 定义 `FooLexer extends BaseLexer`
+- 定义 `FooLexer.next 方法, 可取的 token 又哪些`
+- 使用 `scan(regex, type)` 快速定义 token 类型
+
+### FooParser
 
 - Parser.constructor 里得初始化 `this.lexer = new FooLexer`
 - Parser.parse 定义 parse 过程, 使用 `super.parse()` 初始化 tokens 等
