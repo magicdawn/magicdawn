@@ -19,7 +19,7 @@ class Lexer extends BaseLexer {
   }
 
   num() {
-    const tok = this.scan(/^(\d+)/, 'num')
+    const tok = this.scan(/^ *?(\d+) *?/, 'num')
     if (tok) {
       tok.val = Number(tok.val)
     }
@@ -27,11 +27,11 @@ class Lexer extends BaseLexer {
   }
 
   operator() {
-    return this.scan(/^([\+\-\*\/])/, 'operator')
+    return this.scan(/^ *?([\+\-\*\/]) *?/, 'operator')
   }
 
   brace() {
-    return this.scan(/^([\(\)])/, 'brace')
+    return this.scan(/^ *?([\(\)]) *?/, 'brace')
   }
 }
 

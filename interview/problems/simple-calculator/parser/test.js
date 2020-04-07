@@ -1,13 +1,15 @@
 const {Parser} = require('./parser')
 const calc = require('./calc')
 
-const str = '(2+3)*3+2+3*3-10'
-let ast
-let result
+function calculator(str) {
+  const p = new Parser(str)
+  const ast = p.parse()
+  const result = calc(ast)
+  return result
+}
 
-const p = new Parser(str)
-ast = p.parse()
-// console.log(require('util').inspect(expr, {depth: null}))
+const str1 = '(2+3)*3+2+3*3-10'
+const str2 = '(2+3)*3+ 2+3*3-10'
 
-result = calc(ast)
-console.log(result)
+console.log(calculator(str1))
+console.log(calculator(str2))

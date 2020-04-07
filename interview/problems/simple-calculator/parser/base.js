@@ -64,6 +64,10 @@ class BaseLexer {
     return this.tokens
   }
 
+  fail() {
+    throw this.error('unexpected input found')
+  }
+
   error(message, pos) {
     return new SyntaxError(message, {
       input: this.originalInput,
