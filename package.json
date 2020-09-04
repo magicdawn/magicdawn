@@ -17,7 +17,7 @@
     "ramda": "^0.21.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "sequelize": "^3.23.3"
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "shelljs": "^0.8.2",
