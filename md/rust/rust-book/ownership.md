@@ -1,3 +1,22 @@
+# Data Types
+
+## scalar Types
+
+- interger (`i8`/`u8` `i16`/`u16` `i32`/`u32` `i64`/`u64` `i128`/`u128` `isize`/`usize`) 默认: `i32`
+- floating-point (f32/f64) 默认: `f64`
+- boolean: `true` / `false`
+- character: `char` (4 bytes, 不仅仅是 ascii)
+
+## compound types / 合成类型
+
+- tuple: 使用 `t.0` 等访问成员
+- array: 使用 `let arr: [u32; 5]`, 使用方括号+index 访问成员
+
+### usize
+
+> https://doc.rust-lang.org/std/primitive.usize.html <br>
+> For example, on a 32 bit target, this is 4 bytes and on a 64 bit target, this is 8 bytes.
+
 # ownership
 
 https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
