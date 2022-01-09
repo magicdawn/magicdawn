@@ -4,7 +4,8 @@
 git add --all
 
 # commit
-update_at=$(date +"%Y-%m-%d %H:%M:%S")
+# update_at=$(date +"%Y-%m-%d %H:%M:%S")
+update_at=$(date +"%Y-%m-%d %H:%M")
 git commit -am "update at $update_at"
 
 # push
