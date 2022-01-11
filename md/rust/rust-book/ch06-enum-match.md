@@ -110,8 +110,8 @@ fn use_coin(c: Coin) {
 
 ```rust
 let config_max = Some(3u8);
-if let Some(max) = config_max {
-  println!("The maximum is conf`igured to be {}", max);
+if let Some(val) = config_max {
+  println!("The maximum is conf`igured to be {}", val);
 }
 
 // none
