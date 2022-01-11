@@ -15,7 +15,7 @@ let k: IpAddrKind = IpAddrKind::V4;
 ## enum type+data
 
 - 类似于 TypeScript 联合类型
-- enum 除了类型(V4/V6), 还可以携带数据
+- enum 除了类型(如 V4/V6), 还可以携带数据
 
 ```rust
 enum IpAddr {
