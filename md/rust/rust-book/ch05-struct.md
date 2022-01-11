@@ -4,10 +4,10 @@
 
 ```rust
 struct User {
-	active: bool,
-	username: String,
-	email: String,
-	sign_in_count: u64,
+  active: bool,
+  username: String,
+  email: String,
+  sign_in_count: u64,
 }
 ```
 
@@ -17,10 +17,10 @@ struct User {
 
 ```rust
 let user1 = User {
-	email: String::from("someone@example.com"),
-	username: String::from("someusername123"),
-	active: true,
-	sign_in_count: 1,
+  email: String::from("someone@example.com"),
+  username: String::from("someusername123"),
+  active: true,
+  sign_in_count: 1,
 };
 ```
 
@@ -45,14 +45,14 @@ let origin = Point(0, 0, 0);
 ```rust
 #[derive(Debug)]
 struct Rectangle {
-	width: u32,
-	height: u32,
+  width: u32,
+  height: u32,
 }
 
 impl Rectangle {
-	fn area(&self) -> u32 {
-		return	self.width * self.height;
-	}
+  fn area(&self) -> u32 {
+    return	self.width * self.height;
+  }
 }
 ```
 
@@ -62,20 +62,20 @@ impl Rectangle {
 
 ```rust
 impl User {
-	fn new() -> User {
-		User {
-			// ...
-		}
-	}
+  fn new() -> User {
+    User {
+      // ...
+    }
+  }
 }
 
 impl Rectangle {
-	fn square(size: u32) -> Rectangle {
-		Rectangle {
-			width: size,
-			height: size,
-		}
-	}
+  fn square(size: u32) -> Rectangle {
+    Rectangle {
+      width: size,
+      height: size,
+    }
+  }
 }
 
 // 调用
