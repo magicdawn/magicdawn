@@ -75,3 +75,21 @@ fn main() -> Result<(), Box<dyn Error>> {
 ```
 
 - `Box<dyn Error>` any kind of error.
+
+## panic 捕获
+
+https://doc.rust-lang.org/std/panic/fn.catch_unwind.html
+
+```rust
+use std::panic;
+
+let result = panic::catch_unwind(|| {
+  println!("hello!");
+});
+assert!(result.is_ok());
+
+let result = panic::catch_unwind(|| {
+  panic!("oh no!");
+});
+assert!(result.is_err());
+```
