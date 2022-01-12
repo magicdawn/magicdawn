@@ -86,4 +86,36 @@ https://stackoverflow.com/questions/29403920/whats-the-difference-between-use-an
 
 - `mod` / `fn` / `struct` / `enum` 都可以加 `pub`
 - 默认不能在外部访问私有的物件
-- todo: ...
+- `struct` 分为 `pub struct` 和 `pub field`, 分别控制 `struct` 和 `struct members` 的可见性
+- `enum` 只需要标注整个 enum 为 `pub`, 所有成员自动成为 pub
+
+### `pub use`
+
+re-export, 先将 member `use` 到当前 `scope`, 在通过 `pub` 导出
+
+## `module` 拆分成多个文件
+
+Filename: src/lib.rs
+
+```rust
+mod front_of_house;
+
+pub use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+  hosting::add_to_waitlist();
+  hosting::add_to_waitlist();
+  hosting::add_to_waitlist();
+}
+```
+
+Filename: src/front_of_house.rs
+
+```rust
+pub mod hosting {
+  pub fn add_to_waitlist() {}
+}
+```
+
+- 空的 mod 语句(如 `mod front_of_house;`)表示从外部加载该模块
+- 文件名会成为模块名, 最后 `add_to_waitlist` 访问路径为 `front_of_house::hosting::add_to_waitlist()`
