@@ -58,19 +58,9 @@ pub unsafe fn from_retained_ptr(ptr: *mut T) -> Id<T, O> {
 #### `from_retained_ptr`
 
 - `from_retained_ptr` 比 `from_ptr` 少调用一次 `retain`
-- 对于已经 retained 的数据, 使用 `from_retained_ptr`, 比如经过 `alloc` / `new` / `copy` 方法生成的数据
 
-https://hit-alibaba.github.io/interview/iOS/ObjC-Basic/MM.html#%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%B1%BB%E5%88%AB
+- 对于已经 retained 的数据, 使用 `from_retained_ptr`
 
-我的理解目前只有 alloc_init 出来的对象需搭配 `from_retained_ptr`,
-其他地方用 `from_ptr`
+  - 比如经过 `alloc` / `new` / `copy` 方法生成的数据
 
 ## rust objc `autoreleasepool(|| { /* code */ })`
-
-```rust
-objc::rc::autoreleasepool(|| {
-  // Autorelease consumes the StrongPtr, but won't
-  // actually release until the end of an autoreleasepool
-  obj.autorelease();
-});
-```
