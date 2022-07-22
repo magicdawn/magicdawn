@@ -23,6 +23,20 @@
 
 moduleResolution = nodenext, 其他可选 'node' | 'classic', 新的 nodenext 没有文档
 
+### ts-node
+
+需要使用 `ts-node-esm` / `ts-node --esm`, CommonJS 是注册 require.extensions 即可, esm 需要 spawn child_process `node --loader ts-node/esm`
+使用 `ts-node some.mts` 不起作用, ts-node v10.9.1, 不够智能
+或者使用 `tsconfig.json` `ts-node.esm = true`
+
+```json
+{
+  "ts-node": {
+    "esm": true
+  }
+}
+```
+
 ### 写法
 
 - 带扩展名 `import './index.js'`
