@@ -19,9 +19,23 @@
 
 和 node.js 的机制一样.
 
-### `tsconfig.moduleResolution = nodenext`
+### moduleResolution
 
-moduleResolution = nodenext, 其他可选 'node' | 'classic', 新的 nodenext 没有文档
+moduleResolution TS 文档, 讲的是如何确定被导入的模块是哪个文件. (下面链接中只有 classic 和 node 的 resolve 过程, node16/nodenext 可能还在补充中
+https://www.typescriptlang.org/docs/handbook/module-resolution.html#node
+
+- `classic`: 早期 TypeScript resolve 模块逻辑
+- `node`: Node.js 在 CommonJS 时代的 resolve 模块逻辑, 可以省略 index, 省略扩展 等等, TS Handbook & node.js 文档有详细过程.
+- `node16` or `nodenext`: Node.js ESM 的 resolve 逻辑, 规范在这里 https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#resolver-algorithm-specification
+
+未设置 `moduleResolution` 时的默认值
+
+- 当 module = AMD, UMD, System or ES6/ES2015 时, moduleResolution 默认为 classic
+- 当 module = node16 or nodenext 时, moduleResolution 为 node16 或者 nodenext
+- 其他情况, 默认为 `node`
+
+有个 issue, https://github.com/microsoft/TypeScript/issues/48854
+module:nodenext + moduleResolution:node
 
 ### ts-node
 
