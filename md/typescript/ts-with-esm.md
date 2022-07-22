@@ -37,6 +37,12 @@ moduleResolution = nodenext, 其他可选 'node' | 'classic', 新的 nodenext �
 }
 ```
 
+#### paths
+
+- 目前 tsconfig-paths 包不能处理 esm 的情况
+- ts-node 在处理中 https://github.com/TypeStrong/ts-node/pull/1585
+- esbuild-kit/tsx README 说能处理, 未尝试
+
 ### 写法
 
 - 带扩展名 `import './index.js'`
