@@ -15,7 +15,7 @@ see https://github.com/microsoft/TypeScript/issues/24082
 - es2020:
   - `import()`
   - `import.meta`
-- es2022 typescript@4.5 支持
+- es2022 v4.5 支持
   - top level await
 - esnext ?
 
@@ -28,7 +28,7 @@ https://www.typescriptlang.org/tsconfig#high-level-libraries
 
 ## target = ES2022
 
-于 v4.6 添加, 包含以下内容
+v4.6 支持, 包含以下内容
 
 - `Array.prototype.at`
 - `Object.hasOwn`
