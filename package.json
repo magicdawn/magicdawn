@@ -3,32 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "chokidar": "^1.4.3",
-    "co": "^4.6.0",
-    "debug": "^2.2.0",
-    "ioredis": "^2.3.0",
-    "js-yaml": "^3.6.0",
-    "lodash": "^4.13.1",
-    "minimist": "^1.2.0",
-    "mysql": "^2.11.1",
-    "nunjucks": "^2.4.2",
-    "pg": "^5.1.0",
+    "chokidar": "^3.5.3",
+    "debug": "^4.3.4",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.6",
+    "nunjucks": "^3.2.3",
     "ractive-engine": "^0.1.1",
-    "ramda": "^0.21.0",
-    "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
-    "sequelize": "^3.23.3"
+    "ramda": "^0.28.0"
   },
   "devDependencies": {
-    "shelljs": "^0.8.2",
-    "husky": "^8.0.0",
-    "prettier": "latest",
-    "lint-staged": "latest"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "shelljs": "^0.8.5",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "lint-staged": "^13.0.3"
   },
   "lint-staged": {
     "*.{js,less,vue,md}": [
