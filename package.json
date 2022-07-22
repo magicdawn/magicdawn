@@ -19,9 +19,8 @@
     "lint-staged": "^13.0.3"
   },
   "lint-staged": {
-    "*.{js,less,vue,md}": [
-      "prettier --write",
-      "git add"
+    "*.{md,ts,tsx,js,less,vue}": [
+      "prettier --write"
     ]
   },
   "scripts": {
