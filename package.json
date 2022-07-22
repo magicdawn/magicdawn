@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "shelljs": "^0.8.2",
-    "husky": "latest",
+    "husky": "^8.0.0",
     "prettier": "latest",
     "lint-staged": "latest"
   },
@@ -35,5 +35,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "scripts": {
+    "prepare": "husky install"
   }
 }

@@ -8,10 +8,9 @@
 import identifier = require('foo');
 ```
 
-使用 `export =` map到 `module.exports = obj`
+使用 `export =` map 到 `module.exports = obj`
 
-估计 Node.js 中允许ES2015 module 的时候, CommonJS 模块与 ES2015 module 模块交互, 应该也类似, 拭目以待...
-
+估计 Node.js 中允许 ES2015 module 的时候, CommonJS 模块与 ES2015 module 模块交互, 应该也类似, 拭目以待...
 
 ### namespace
 
