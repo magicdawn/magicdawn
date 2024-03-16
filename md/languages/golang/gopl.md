@@ -1,4 +1,5 @@
 # gopl
+
 https://docs.ruanjiadeng.com/gopl-zh/index.html
 
 ## ch2
@@ -26,7 +27,7 @@ x = 1
 *p = true
 ```
 
-- `+=` / `-=` / `*=` / `\=` 在golang中可用
+- `+=` / `-=` / `*=` / `\=` 在 golang 中可用
 - `x++` 是一个 statement, 而不是一个 expression
 
 元组赋值
@@ -38,13 +39,13 @@ x = 1
 type 类型名字 底层类型
 ```
 
-- 如果底层类型相同, 例如 `type A int; type B int` A & B 不能混用, 使用 
+- 如果底层类型相同, 例如 `type A int; type B int` A & B 不能混用, 使用
   - A(b_value) 转为 A 类型值
   - B(a_value) 转为 B 类型值
 
 ### 包和文件
 
-- 一个包保存在一个或多个go文件中
+- 一个包保存在一个或多个 go 文件中
 - 包导入的名称通常是`basename(path)`, 例如导入 `/github.com/magicdawn/goco` 包应为 `goco`
 
 #### 包初始化
@@ -71,6 +72,7 @@ var x = 3
 - `byte` = `uint8`
 
 二元运算符优先级
+
 ```go
 *      /      %      <<       >>     &       &^
 +      -      |      ^
@@ -81,36 +83,39 @@ var x = 3
 
 #### 打印格式
 
-| 格式          | 说明                                       |
-| ----------- | ---------------------------------------- |
-| `%d`        | 输出10进制                                   |
-| `%b`        | 输出2进制                                    |
-| `%o`        | 输出8进制                                    |
-| `%x` / `%X` | 输出16进制                                   |
-| `%[1]d`     | 还是使用第一个格式化输入                             |
-| `%#x`       | 输出 `0x`, 8进制输出头部 `0`, `x`输出 `0x`, `X` 输出 `0X` |
+| 格式        | 说明                                                       |
+| ----------- | ---------------------------------------------------------- |
+| `%d`        | 输出 10 进制                                               |
+| `%b`        | 输出 2 进制                                                |
+| `%o`        | 输出 8 进制                                                |
+| `%x` / `%X` | 输出 16 进制                                               |
+| `%[1]d`     | 还是使用第一个格式化输入                                   |
+| `%#x`       | 输出 `0x`, 8 进制输出头部 `0`, `x`输出 `0x`, `X` 输出 `0X` |
 
 其他
+
 - `%c` 输出单个字符
 - `%q` 输出带 `""`
 
 ### 浮点数
+
 `float32` / `float64`
 
-- float32 & float64 能表示从很小到很大的数, 但是 float32 能表示的正整数并不是很大(float32 有效的 bit 位只有23个, `2 << 24` 赋值给 float32 值, 计算就不精确了)
+- float32 & float64 能表示从很小到很大的数, 但是 float32 能表示的正整数并不是很大(float32 有效的 bit 位只有 23 个, `2 << 24` 赋值给 float32 值, 计算就不精确了)
 
-- 使用 `%g` / `%e` / `%f` 打印浮点数, 例如 `%8.3f` 总长度8, 小数点后保留3位小数
-
+- 使用 `%g` / `%e` / `%f` 打印浮点数, 例如 `%8.3f` 总长度 8, 小数点后保留 3 位小数
 
 ### 复数
 
-go 提供 
+go 提供
+
 - `complex64` / `complex128` 类型
 - `complex(real, imag)` / `real(x)` / `imag(x)` 内置函数
 
 ### 字符串
 
 包
+
 - `unicode`
 - `unicode/utf8`
 - `bytes`
@@ -118,6 +123,7 @@ go 提供
 - `strconv`
 
 Note:
+
 - 字符串一旦生成, 不可改变了.
 - `len(s)` 返回的是字节数目, 并不是字符个数
 - `s[index]` 返回字节值, index 超出 len, 则会 panic
@@ -130,12 +136,13 @@ Note:
     i += size
   }
   ```
-- `for index,c := range "Hello, 世界" { //blabla }` range可以自动解码
-- `[]rune(str)` 将string转为rune数组
+- `for index,c := range "Hello, 世界" { //blabla }` range 可以自动解码
+- `[]rune(str)` 将 string 转为 rune 数组
 - `string(codepoint int32)` 进行 utf8 编码, 如果码点无效, 则使用 `\uFFFD` 代替
 - `byte[](s)` 转换会分配新的字节数组用于字符串数据的拷贝
 
 #### helper
+
 `Contains` / `Join` / `Index` / `HasPrefix` ... 等 helper
 
 `bytes` 包 & `strings` 包都提供这些 helper, 输入参数不同.
@@ -148,14 +155,13 @@ Note:
 - `strconv.Atoi`: `string` to `int`
 - `strconv.ParseInt(s string, 进制 int, size int)`: parseInt
 
-
 ### 常量
 
 常量表达式的值在编译期计算
 
 #### 无类型常量
 
-许多常量没有一个确定的基础类型. 编译器为无明确基础类型的数字提供比基础类型更高精度的算数运算. 
+许多常量没有一个确定的基础类型. 编译器为无明确基础类型的数字提供比基础类型更高精度的算数运算.
 
 ```go
 // TODO: 无类型常量, 不是很懂
@@ -192,7 +198,6 @@ const (
 ### 数组
 
 - 因为长度固定, 很少使用数组, 而是使用 slice 切片
-
 
 ```go
 // 固定长度
@@ -231,7 +236,7 @@ arr := [...]int{
 
 `append(slice, value...)`
 
-append值可能会导致slice重新分配内存, 增大 capacity
+append 值可能会导致 slice 重新分配内存, 增大 capacity
 
 ### map
 
@@ -244,7 +249,7 @@ append值可能会导致slice重新分配内存, 增大 capacity
 
 #### get
 
-> 通过key作为索引下标来访问map将产生一个value。如果key在map中是存在的，那么将得到与key对应的value；如果key不存在，那么将得到value对应类型的零值
+> 通过 key 作为索引下标来访问 map 将产生一个 value。如果 key 在 map 中是存在的，那么将得到与 key 对应的 value；如果 key 不存在，那么将得到 value 对应类型的零值
 
 ```go
 v, ok := map[k] // 这样才对, v 不会为 nil, k 不存在, ok 为 false
@@ -253,6 +258,7 @@ v, ok := map[k] // 这样才对, v 不会为 nil, k 不存在, ok 为 false
 ### struct
 
 #### syntax
+
 ```go
 type Foo struct {
 	ID		Int
@@ -265,15 +271,14 @@ var pf *Foo = &foo
 
 - 相同类型的字段可以合并
 - `foo.prop` & `pf.prop` 均可以, 即指针也可以直接使用 `.` 操作符
-- 一个名为 `S` 的struct不能再包括一个 `S` 类型的成员, 但是可以包含 `*S` 类型的成员
+- 一个名为 `S` 的 struct 不能再包括一个 `S` 类型的成员, 但是可以包含 `*S` 类型的成员
 - `Foo{ val1, val2, ... }` 给定所有属性值
 - `Foo{ prop: val }` 给定某些属性
 - 使用 `%#v` 打印结构体, 会打印每一个字段
 
-
 #### 比较
 
-> 如果结构体成员全部是可以比较的, 那么结构体也是可以比较的. 使用 `==` 比较结构体, 将比较两个结构体的所有成员. 
+> 如果结构体成员全部是可以比较的, 那么结构体也是可以比较的. 使用 `==` 比较结构体, 将比较两个结构体的所有成员.
 
 由于可以比较, 结构体也可以作为 map 的 key
 
@@ -306,6 +311,7 @@ type Wheel struct {
   ​
 
 ### JSON
+
 ```go
 type Movie struct {
     Title  string
@@ -315,12 +321,13 @@ type Movie struct {
 }
 ```
 
-- `json.Marshal()`  / `json.MarshalIndent()` 只有可导出的成员才会出现在导出值中.
-- `json:"导出字段"` tag可以设置导出字段 
+- `json.Marshal()` / `json.MarshalIndent()` 只有可导出的成员才会出现在导出值中.
+- `json:"导出字段"` tag 可以设置导出字段
 - `json:"导出ziduan, omitempty"` 忽略空值
 - `json.Unmarshal(json_string, 结构体)`
 
 ### text & template
+
 ```go
 t := template
 	.New('t')
@@ -334,7 +341,7 @@ t.Execute(os.Stdout, data)
 
 ## ch5 函数
 
-###  多返回值
+### 多返回值
 
 ```
 func fn() (int, error) {
@@ -346,7 +353,7 @@ func fn() (int, error) {
 
 常用错误处理策略
 
-- 传播错误, 函数 body 中某个function call返回的error, 变成这个函数的error
+- 传播错误, 函数 body 中某个 function call 返回的 error, 变成这个函数的 error
 - 忽略错误, 进行重试 / 只打印错误信息 / 完全忽略
 - 输出错误信息, 并退出. 可以使用 `log.Fatalf` 达到目的
 
@@ -370,8 +377,6 @@ for _, v := range []int{1,2,3,4,5} {
 }
 ```
 
-
-
 ### 可变参数
 
 ```go
@@ -386,13 +391,11 @@ ints := []int{ 1,2,3,4 }
 add(ints...) // 使用 spread
 ```
 
-
-
 ### `defer` / `panic` / `recover`
 
 - defer 在 `return` 之后执行, 甚至可以用来修改返回值
 - `defer fn1(); defer fn2()` : `fn2()` -> `fn1()` 顺序执行
-- panic / recover 一般表示严重错误, 一般 API 都是返回 error, `Must` 开头API, 表示遇到 error panic
+- panic / recover 一般表示严重错误, 一般 API 都是返回 error, `Must` 开头 API, 表示遇到 error panic
 
 ## ch6 方法
 
@@ -408,7 +411,7 @@ func (this Point) Area() {
 
 - 这里的 `this` 叫做 receiver
 - `p.Area` 被赋值给一个 `fn` 变量后, `this` 还是指向 `p`, 没有 js 里 `call` / `apply` 一说
-- 无论 receiver形参 是 `T` / `*T`, 无论实参是 `T` / `*T`, 均可以调用
+- 无论 receiver 形参 是 `T` / `*T`, 无论实参是 `T` / `*T`, 均可以调用
 - 嵌入的结构体的方法可以直接使用
 
 ## ch7 接口
@@ -418,8 +421,6 @@ type Writer interface {
   Write(p []byte) (n int, err error)
 }
 ```
-
-
 
 - 接口是合约, 只要实现了接口里所有的方法, 就可认为实现了接口
 
@@ -472,7 +473,7 @@ func main() {
 
 ### 常用接口
 
-- `sort.Interface` 
+- `sort.Interface`
 
   - `Len`
   - `Less`
@@ -482,11 +483,11 @@ func main() {
 
   - `ServeHTTP(w ResponseWriter, r *Request)`
 
-- `http.NewServeMux()`  一个 `ServerMux` 类似 `router` , 然后 
+- `http.NewServeMux()` 一个 `ServerMux` 类似 `router` , 然后
 
   - `http.HandleFunc` 将一个 `func(ResponseWrite, *Request)` 转换为一个 `http.Handle`
 
-  - `mux.Handle(path string, handler http.Handler)` 于是一般 
+  - `mux.Handle(path string, handler http.Handler)` 于是一般
 
     ```go
     mux.Handle('/hello', http.HandlerFunc(func(w ResponseWriter, r *Request) {
@@ -497,7 +498,7 @@ func main() {
     // 注意是 `http.HandlerFunc`
     ```
 
-  - `mux.HandleFunc("/hello", func(w ResponseWriter, r *Request){ })` 
+  - `mux.HandleFunc("/hello", func(w ResponseWriter, r *Request){ })`
 
   - `http.HandleFunc()` / `http.DefaultServeMux` / `http.ListenAndServe(address, nil)` 使用内置的默认 mux
 
@@ -516,7 +517,7 @@ f := w.(*os.File)      // success: f == os.Stdout
 c := w.(*bytes.Buffer) // panic: interface holds *os.File, not *bytes.Buffer
 ```
 
-## ch8 
+## ch8
 
 ```go
 ch = make(chan int)    // unbuffered channel
@@ -534,12 +535,12 @@ d := <- ch 	// receive
 
 发送将导致发送者阻塞, 直至接收者接收值
 
-### 带缓存的channel
+### 带缓存的 channel
 
 - 发送往队列队尾添加数据, 没超过队列容量时, 可以无阻塞添加
 - 接收从队列对首删除数据, 当没有数据可以被删除时, 接收阻塞
 
-### 单方向channel
+### 单方向 channel
 
 - `func(ch chan<-int)` 表示只能往 `ch <- int` 发送 int
 - `func(ch <-chan int)` 标示只能用于接收 `d := <-ch `
@@ -549,17 +550,17 @@ d := <- ch 	// receive
 ```go
 select{
 case <- ch1:
-	// 
+	//
 case <- ch2:
 	//
 case <- time.After(10 * time.Second):
 	// 超时
 default:
-	// 
+	//
 }
 ```
 
-## ch9锁
+## ch9 锁
 
 ### `sync.Mutex` 互斥锁
 
@@ -567,7 +568,7 @@ default:
 
 ### `sync.RWMutex` 读写锁
 
-> 允许多个只读操作并行执行，但写操作会完全互斥。这种锁叫作“多读单写”锁(multiple readers, single writer lock)，Go语言提供的这样的锁是sync.RWMutex
+> 允许多个只读操作并行执行，但写操作会完全互斥。这种锁叫作“多读单写”锁(multiple readers, single writer lock)，Go 语言提供的这样的锁是 sync.RWMutex
 
 - mu.RLock / mu.RUnlock
 
@@ -605,18 +606,16 @@ func instance(){
 $ go build/run/test -race
 ```
 
-
-
 ## ch10 包
 
 工具
 
-- `go get [-u] url` 
+- `go get [-u] url`
   - `url` 的返回内容 `<meta name="go-import" content="golang.org/x/net git https://go.googlesource.com/net">` 即可定义真正的 get path
   - `-u` 表示确保是最新的
 - `go build` 编译
 - `go install` 保存编译结果, 而不是丢弃
-- `go run` 
+- `go run`
 - `go list <导入路径>` 列出包
   - 使用 `...` 表示任意路径, 如 `go list ...xml...` 列出包含 `xml` 的包
   - 使用 `-json` 表示输出 son
@@ -624,15 +623,13 @@ $ go build/run/test -race
 
 ## ch11 测试
 
-> 在包目录内, 所有以 `_test.go` 为后缀名的源文件并不是 go build 构建包的一部分, 它们是 `go test` 测试的一部分. 
+> 在包目录内, 所有以 `_test.go` 为后缀名的源文件并不是 go build 构建包的一部分, 它们是 `go test` 测试的一部分.
 
 有三种类型的测试函数
 
 - 测试函数: 以 `Test` 为函数名前缀, 用于测试函数的逻辑行为是否正确
-- 基准测试函数: 以 `Benchmark` 为函数名前缀, 用于衡量一些函数的性能, go test 会多次运行基准函数以计算一个平均的执行时间. 
-- 示例函数: 以 `Example` 为函数名前缀, 提供一个由编译器保证正确性的示例文档. 
-
-
+- 基准测试函数: 以 `Benchmark` 为函数名前缀, 用于衡量一些函数的性能, go test 会多次运行基准函数以计算一个平均的执行时间.
+- 示例函数: 以 `Example` 为函数名前缀, 提供一个由编译器保证正确性的示例文档.
 
 ### 测试函数
 
@@ -642,13 +639,11 @@ func TestName(t *testing.T) {
 }
 ```
 
-
-
-- `go test` 命令如果没有指定包, 那么将采用当前目录对应的包, 
+- `go test` 命令如果没有指定包, 那么将采用当前目录对应的包,
 - `go test -v` 打印每个测试函数的名称和运行时间
 - `-run="foo|bar"` 对应一个正则表达式, 只有匹配的测试函数才会被运行
 
-###  扩展测试包
+### 扩展测试包
 
 ```go
 package foo 		// 逻辑
@@ -658,7 +653,7 @@ package foo_test	// 用于测试
 ### 测试覆盖率
 
 ```sh
-# 生成 coverage 
+# 生成 coverage
 $ go test -coverprofile=c.out
 # 生成 html
 $ go tool cover -html=c.out
@@ -705,8 +700,6 @@ func ExampleIsPalindrome() {
     // false
 }
 ```
-
-
 
 - 主要作为文档
 - `go test` 会运行示例函数, 会检测该函数的标准输出是否与注释匹配

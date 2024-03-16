@@ -2,13 +2,9 @@
 
 http://man.linuxde.net/xargs
 
-
-
 ```sh
 xargs [options] [command]
 ```
-
-
 
 command 默认是 `echo`
 
