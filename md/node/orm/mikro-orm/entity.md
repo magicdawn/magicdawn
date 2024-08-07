@@ -37,7 +37,7 @@ use `string & Opt` or `Opt<string>`
 
 ### Custom Types
 
-TODO
+https://mikro-orm.io/docs/custom-types
 
 ### Lazy Property
 
@@ -52,3 +52,11 @@ text: string;
 
 - 默认 `@Entity` 是不用 extends
 - 如果有一些公用的, 可以抽出来
+
+#### `{BaseEntity}` from `@mikro-orm/core`
+
+这个 class 定义了 `wrap(ref) => IWrappedEntity` 上的一些方法
+
+- 继承 `BaseEntity` 然后 `em.getReference(Entity,1).isInitialized()`
+
+- 等同于 `wrap(em.getReference(Entity, 1)).isIniialized()`

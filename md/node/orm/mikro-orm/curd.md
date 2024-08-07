@@ -23,6 +23,10 @@ await db.em.flush()
 
 > Alternatively, you can use `em.assign()`, which will also work for not managed entities.
 
+- `assign` 是为了方便 association, 比如 `user!: User` association, 需要写成 `entity.user = em.getReference(User, userId)` , 为了避免使用 `getReference`, 可以使用 `assign({ user: userId })`
+
+- `wrap` : 因为 assign 是 `WrappedEntity` 上的方法, 所以需要将 `Entity` 转成 `WrappedEntity`, 也可以定义 Entity 的时候从 `BaseEntity` 继承, 就可以直接使用 `entity.assign({ user: userId })`
+
 ## delete
 
 可以直接删除
@@ -40,3 +44,5 @@ await db.em.remove(article).flush()
 ```
 
 ## select / query
+
+https://mikro-orm.io/docs/query-conditions
