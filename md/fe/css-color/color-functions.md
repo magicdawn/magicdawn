@@ -41,7 +41,7 @@ W3C 说是 `s` & `l` 可以使用 number, 而 MDN 说明里只有 percentage 类
 ### 范围
 
 - l: percentage (0% - 100%) 或 number (0 - 1) 或 `none`
-- c: percentage 或 number, `chroma`, number 理论上是无上限的, 但实际不超过 `0.5`
+- c: percentage 或 number, `chroma`, number 理论上是无上限的, 但实际不超过 `0.5`, 100% = `0.4`
 - h: 0 ~ 360, 应该是 hue 的表达形式一样, 可以使用 `10deg` / `10` / `10turn` 等形式
 
 ### relative color 范围
@@ -53,4 +53,6 @@ W3C 说是 `s` & `l` 可以使用 number, 而 MDN 说明里只有 percentage 类
 - `h`: number (0 - 360)
 - `alpha`: number (0 - 1 inclusive)
 
-> [!CAUTION] > `oklch` lightness 是 `0-1`, `hsl` lightness 是 `0-100`
+<!-- prettier-ignore -->
+> [!CAUTION]
+> `oklch` lightness 是 `0-1`, `hsl` lightness 是 `0-100`
