@@ -33,6 +33,8 @@ W3C 说是 `s` & `l` 可以使用 number, 而 MDN 说明里只有 percentage 类
 
 ## `oklch()`
 
+hue chroma lightness
+
 ### 文档
 
 - MDN https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
@@ -56,3 +58,7 @@ W3C 说是 `s` & `l` 可以使用 number, 而 MDN 说明里只有 percentage 类
 <!-- prettier-ignore -->
 > [!CAUTION]
 > `oklch` lightness 是 `0-1`, `hsl` lightness 是 `0-100`
+
+### 工具
+
+- 取色器 + 可视化 https://oklch.com
