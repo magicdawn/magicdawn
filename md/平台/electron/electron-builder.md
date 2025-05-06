@@ -33,4 +33,5 @@ electron build 对文件夹/文件处理比较诡异,建议全部使用文件 pa
 ```yaml
 files:
   - '!**/node_modules/**'
+  - '!**/node_modules/**/*'
 ```
