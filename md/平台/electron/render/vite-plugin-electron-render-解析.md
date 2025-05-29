@@ -23,7 +23,7 @@ export const clipboard = M.clipboard
 plugins: [
   vitePluginElectronRender({
     resolve: {
-      'fs-extra': {type: 'cjs'},
+      'fs-extra': { type: 'cjs' },
     },
   }),
 ]

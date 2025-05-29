@@ -1,0 +1,15 @@
+{
+  "name": "glob",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "fast-glob": "^3.3.3",
+    "micromatch": "^4.0.8",
+    "minimatch": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^22.15.24"
+  }
+}

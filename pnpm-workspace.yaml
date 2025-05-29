@@ -1,0 +1,9 @@
+packages:
+  - node
+  - node/**
+
+onlyBuiltDependencies:
+  - fsevents
+  - metalsmith
+  - unrs-resolver
+  - ws
