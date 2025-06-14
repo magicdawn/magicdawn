@@ -3,7 +3,7 @@
     "callbackify": "^1.1.0",
     "co": "^4.6.0",
     "promise.cb": "^0.0.2",
-    "promise.ify": "^0.3.0",
-    "thrift": "^0.9.3"
+    "promise.ify": "^0.4.0",
+    "thrift": "^0.22.0"
   }
 }

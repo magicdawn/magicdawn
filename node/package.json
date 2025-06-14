@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "amqplib": "^0.5.1",
+    "amqplib": "^0.10.8",
     "co": "^4.6.0",
     "form-data": "^1.0.1",
-    "nodemailer": "^2.6.4",
-    "superagent": "^2.2.0"
+    "nodemailer": "^2.7.2",
+    "superagent": "^2.3.0"
   }
 }
