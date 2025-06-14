@@ -50,7 +50,13 @@ TS 是 “Transport Stream” 的缩写，全称是：
 - ASC: Audio Specific Config, 用于 mp4 等容器
 
 ```sh
+# ❌ 错误用法, 不能有 -bsf:a aac_adtstoasc
 ffmpeg -i https://some-stream -c copy -bsf:a aac_adtstoasc out.ts
+
+# ✅ 正确用法, mp4 可以有 -bsf:a aac_adtstoasc
+#     Q: 为什么是可以有
+#     A: 不带 -bsf:a aac_adtstoasc 的情况下，ffmpeg 识别到 mp4 容器, 会自动添加; 使用 `-v verbose` 输出详细日志
+ffmpeg -i https://some-stream -c copy -bsf:a aac_adtstoasc out.mp4
 ```
 
 - .ts 文件本身就是使用 ADTS 封装 AAC 音频，如果你对音频使用了 aac_adtstoasc，结果就会变成不兼容的音频流，播放器无法正确解析，就出现了“刺耳”的声音。
