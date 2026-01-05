@@ -126,3 +126,13 @@ Implies:
 新代码只使用 esm, 这里只讨论 esm 的情况
 
 ![longshot20260105224202.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/810678a3322b4ca19823846ec4314837~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgbWFnaWNkYXduX2do:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMTQzMzQxODg5MTAwMjQ1NSJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1768229454&x-orig-sign=8K%2BvnxU7NSpgtvJyXnqKZ3pPQvE%3D)
+
+非常短的版本: 不用管 `moduleResolution`, 用设置的 `module` 值所决定的默认值即可
+
+- bundler: `module: preserve`
+- 非 bundler: `module: nodenext`
+
+## TotalTypeScript TsConfig Cheatsheet
+
+https://www.totaltypescript.com/tsconfig-cheat-sheet
+and https://github.com/total-typescript/tsconfig/blob/main/bundler/no-dom.json
