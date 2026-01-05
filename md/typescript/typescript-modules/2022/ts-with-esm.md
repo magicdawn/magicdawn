@@ -64,7 +64,7 @@ module:nodenext + moduleResolution:node
 
 ```ts
 import pkg from './some/cjs-module.js'
-const {namedExports} = pkg
+const { namedExports } = pkg
 ```
 
 注意: module.exports 使用 default export 总是可用, 某些情况下可以使用 namedExports, 我试了不太行,
